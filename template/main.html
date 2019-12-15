@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lnag="kr">
+<head>
+<meta charset='UTF-8'>
+    <title>
+        웹 데이터 수집기
+    </title>
+    <style>
+        #url_input {
+            width: 70%;
+        }
+
+        #iframe_content {
+            display: inline;
+            border: none;
+            height: 100vh;
+            width:100vw;
+        }
+
+        #sub_content{
+            text-align: center;
+        }
+        .wrap {
+             margin: 0 auto;
+            width: 90%;
+            }
+            #header {
+            height: 200px;
+            background: #ece6cc;
+            }
+
+            .contents {
+            background: #ece6cc;
+            }
+    </style>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/W3CSS.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+<body class="w3-sand">
+
+    <div id="header">
+
+    <form method="POST" action="/calculate" id="submit_form" class="w3-display-topmiddle">
+        <p class="w3-medium w3-center" >쉽고 간편한 웹 데이터 수집</p>
+        <p class="w3-xlarge w3-center" > Good-Sum-Up </p>
+        <input id="url_input" type="text" name="url" placeholder="url">
+        <input id="limit_input" type="number" name="limit" placeholder="limit">
+        <button type="submit">입력</button>
+        <a href="/"> 다시하기 </a>
+    </form>
+    </div>
+
+
+    <div class="contents">
+
+    <div id = "sub_content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
